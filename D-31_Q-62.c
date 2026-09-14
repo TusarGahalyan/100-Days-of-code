@@ -3,27 +3,22 @@
 #include<stdio.h>
     int main()
     {
-        int a , i , temp=0;
+        int a , i , j , temp=0;
         printf("Enter the size of array :- ");
         scanf("%d",&a);
 
         int arr[a];
-        printf("Enter the elements of array :- ");
-        for(i=0 ; i<a ; i++)
-        {
-        scanf("%d",&arr[i]);
-        }
-        for(i=0 ; i<a/2 ; i++)
-        {
-            temp=arr[i];
-            arr[i]=arr[a-1-i];
-            arr[a-1-i]=temp;
-        }
-        printf("After reversing :- ");
-        for(i=0 ; i<a ; i++)
-        {
-            printf("%d",arr[i]);
-        }
-        return 0;
+        printf("Enter elements of array :- ");
+        for(i=0 ; i<a ; i++){
+        scanf("%d",&arr[i]);}
 
+        j=i-1;
+        for(i=0 ; i<j ; i++ , j--){
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+        }
+        for(i=0 ; i<a ; i++){
+        printf("%d ",arr[i]);}
+        return 0;
     }
